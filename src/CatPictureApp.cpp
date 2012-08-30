@@ -12,6 +12,7 @@ class CatPictureApp : public AppBasic {
 	void update();
 	void draw();
 private:
+	Surface* mySurface_;
 	// Variables for the brightness of the pixels
 	float red_;
 	float green_;
@@ -19,8 +20,18 @@ private:
 
 	// increments as the program runs and keeps track of time
 	float time_;
+
+	static const int kAppWidth = 800;
+	static const int kAppHeight = 600;
+	static const int kTextureSize = 1024;
+
+	void tileWithRectangles(uint8_t* pixels, int x1, int y1, int x2, int y2, int rect_width, int rect_height, Color8u fill1, Color8u border1, Color8u fill2, Color8u border2);
 };
 
+void CatPictureApp::tileWithRectangles(uint8_t* pixels, int x1, int y1, int x2, int y2, int rect_width, int rect_height, Color8u fill1, Color8u border1, Color8u fill2, Color8u border2)
+{
+
+}
 void CatPictureApp::setup()
 {
 	time_ = 0.0;
